@@ -21,6 +21,7 @@
             z-index: 999;
         }
 
+
         .navbar.open {
             transform: translateX(0);
         }
@@ -54,16 +55,31 @@
 
         header {
             text-align: center;
-            padding: 4rem 1rem;
+            padding: 10rem 1rem;
             background-color: #7DA2A9;
             color: #f7f7f7;
+        }
+
+        header h1{
+            font-size: 40px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: bolder;
+            color: white;
+            
+        }
+        header p{
+            font-size: 22px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: bolder;
+            color: white;
+            
         }
 
         .header-buttons {
             display: flex;
             justify-content: center;
-            gap: 1rem;
-            margin-top: 1rem;
+            gap: 2rem;
+            margin-top: 2rem;
         }
 
         .header-buttons button {
@@ -152,7 +168,7 @@
         .contact_us button {
             width: 500px;
             height: 35px;
-            border: 1px solid #A5A5A5;
+            border: 1px solid #0f262f;
             border-radius: 5px;
         }
 
