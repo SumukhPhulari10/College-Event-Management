@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Collage Event Management</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -32,14 +34,15 @@
     <section id="events">
         <h2>Upcoming Events</h2>
         <ul>
-            <li><strong>Annual Tech Fest</strong> - 25th May 2025<br>Experience the latest innovations in AI, robotics,
+            <li><strong>Annual Tech Fest</strong> - 22th April 2025<br>Experience the latest innovations in AI,
+                robotics,
                 and software development with workshops, hackathons, and keynote speeches from industry leaders.</li>
             <br>
-            <li><strong>Inter-College Debate</strong> - 1st June 2025<br>Engage in thought-provoking discussions on
+            <li><strong>Inter-College Debate</strong> - 23st April 2025<br>Engage in thought-provoking discussions on
                 trending social and technological topics, judged by esteemed faculty and guest speakers.</li><br>
-            <li><strong>Cultural Extravaganza</strong> - 15th June 2025<br>Showcase your talent in music, dance, drama,
+            <li><strong>Cultural Extravaganza</strong> - 25th April 2025<br>Showcase your talent in music, dance, drama,
                 and fine arts, and enjoy vibrant cultural performances from across the region.</li><br>
-            <li><strong>Sports Meet</strong> - 20th June 2025<br>Participate in a wide range of sports including
+            <li><strong>Sports Meet</strong> - 17th April 2025<br>Participate in a wide range of sports including
                 football, basketball, athletics, and indoor games, promoting teamwork and sportsmanship.</li>
         </ul>
     </section>
@@ -49,20 +52,20 @@
     <section id="gallery">
         <h2>Gallery</h2>
         <div class="gallery">
-            <img src="technology.jpeg" alt="Event 1" onclick="goTotech()">
-            <img src="volunteer.jpeg" alt="Event 2" onclick="goTovol()">
-            <img src="sport.jpeg" alt="Event 3" onclick="goTosport()">
+            <img src="tech.jpg" alt="Event 1" onclick="goTotech()">
+            <img src="volunteer.png" alt="Event 2" onclick="goTovol()">
+            <img src="sport.jpg" alt="Event 3" onclick="goTosport()">
             <img src="dance.jpg" alt="Event 4" onclick="goToevent()">
         </div>
     </section>
 
     <section id="contact" class="con">
         <h2>Contact Us</h2>
-        <form id="contactForm">
+        <form id="contactForm" action="index.php" method="post">
             <div class="contact_us">
-                <input type="text" placeholder="Your Name" required><br><br>
-                <input type="email" placeholder="Your Email" required><br><br>
-                <textarea placeholder="Your Message" rows="6" required></textarea><br><br>
+                <input name="name" type="text" placeholder="Your Name" required><br><br>
+                <input name="email" type="email" placeholder="Your Email" required><br><br>
+                <textarea name="Message" placeholder="Your Message" rows="6" required></textarea><br><br>
                 <button type="submit">Send Message</button>
             </div>
         </form>
@@ -82,6 +85,9 @@
     <footer>
         &copy; 2025 College Event Management | All Rights Reserved
     </footer>
+    
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init();</script>
 
     <script>
         function goToRegister() {
