@@ -7,7 +7,8 @@
     <style>
     body {
         font-family: Arial, sans-serif;
-        background-color: #000000; /* Black background */
+        background-image: url(https://images.wallpapersden.com/image/download/starry-landscape-4k-cool-blue-moon_bW5tbG6UmZqaraWkpJRobWllrWdma2U.jpg); 
+        background-size: cover;
         height: 100vh;
         margin: 0;
         display: flex;
@@ -16,20 +17,21 @@
     }
 
     .form-container {
-        background-color: #333333; /* Dark gray form background */
+        background-color: none; 
+        opacity: 0.9;
         padding: 30px;
         border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.9);
         width: 100%;
         max-width: 400px;
-        color: #f7f7f7; /* Light text */
+        color: #f7f7f7; 
     }
 
     .form-container h2 {
-        font-size: 28px;
         text-align: center;
         margin-bottom: 20px;
-        color: #7DA2A9; /* Accent title */
+        color: #6ebfcf; 
+        font-size: 29px;
     }
 
     .form-group {
@@ -40,29 +42,41 @@
         display: block;
         margin-bottom: 5px;
         font-weight: bold;
-        color: #f7f7f7; /* Light label text */
+        color: #f7f7f7; 
     }
 
     .form-group input {
-        width: 100%;
+        width: 95%;
         padding: 10px;
-        border: 1px solid #A5A5A5; /* Medium gray border */
-        border-radius: 6px;
-        color: #000000; /* Black text */
-        background-color: #f7f7f7; /* Light input background */
+         border-radius: 6px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+
+        border: 1px solid #4a4646; 
+        color: #fff; 
+        background: none;
     }
 
     .form-group input:focus {
-        border-color: #7DA2A9; /* Accent focus */
+        border-color: #7DA2A9; 
         outline: none;
         box-shadow: 0 0 5px #7DA2A9;
     }
+    a{
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+        color: red;
+    }
+    a:hover{
+        color: blue;
 
+    }
     .submit-btn {
-        background-color: #7DA2A9; /* Accent button */
+        background-color: #7DA2A9; 
         color: #000000;
         padding: 12px;
         border: none;
+        margin-top: 20px;
         border-radius: 6px;
         width: 100%;
         font-size: 16px;
@@ -72,11 +86,11 @@
 
     .submit-btn:hover {
         background-color: #000000;
-        color: white; /* Slightly muted on hover */
+        color: white; 
     }
 
     .error {
-        color: #ff6b6b; /* Keep red for error visibility */
+        color: #ff6b6b; 
         font-size: 0.9em;
         margin-top: 5px;
     }
@@ -86,31 +100,31 @@
 <body>
 <div class="form-container">
     <h2>Register</h2>
-    <form id="registrationForm">
+    <form id="registrationForm" action="register.php" method="post">
         <div class="form-group">
-            <label for="fullname">Full Name</label>
-            <input type="text" id="fullname" name="fullname" required>
+            <label for="fullname">Full Name :</label>
+            <input type="text" id="fullname" name="name" required>
             <div class="error" id="nameError"></div>
         </div>
 
         <div class="form-group">
-            <label for="email">Email</label>
+            <label for="email">Email :</label>
             <input type="email" id="email" name="email" required>
             <div class="error" id="emailError"></div>
         </div>
 
         <div class="form-group">
-            <label for="password">Password</label>
+            <label for="password">Password :</label>
             <input type="password" id="password" name="password" required>
             <div class="error" id="passwordError"></div>
         </div>
 
         <div class="form-group">
-            <label for="confirmPassword">Confirm Password</label>
+            <label for="confirmPassword">Confirm Password :</label>
             <input type="password" id="confirmPassword" name="confirmPassword" required>
             <div class="error" id="confirmPasswordError"></div>
         </div>
-
+        <a href="file:///C:/Users/prasa/OneDrive/Desktop/omkar%20solanke/MAIN-PROJECT/sign_in.html" >already have account ?</a>
         <button type="submit" class="submit-btn">Register</button>
     </form>
 </div>
@@ -119,13 +133,13 @@
     document.getElementById('registrationForm').addEventListener('submit', function(event) {
         event.preventDefault();
 
-        // Clear previous errors
+        
         document.getElementById('nameError').innerText = '';
         document.getElementById('emailError').innerText = '';
         document.getElementById('passwordError').innerText = '';
         document.getElementById('confirmPasswordError').innerText = '';
 
-        // Form values
+       
         const fullName = document.getElementById('fullname').value.trim();
         const email = document.getElementById('email').value.trim();
         const password = document.getElementById('password').value;
@@ -133,26 +147,25 @@
 
         let valid = true;
 
-        // Name validation
         if (fullName.length < 3) {
             document.getElementById('nameError').innerText = 'Name must be at least 3 characters';
             valid = false;
         }
 
-        // Email validation
+        
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailPattern.test(email)) {
             document.getElementById('emailError').innerText = 'Please enter a valid email address';
             valid = false;
         }
 
-        // Password validation
+        
         if (password.length < 6) {
             document.getElementById('passwordError').innerText = 'Password must be at least 6 characters';
             valid = false;
         }
 
-        // Confirm password validation
+        
         if (password !== confirmPassword) {
             document.getElementById('confirmPasswordError').innerText = 'Passwords do not match';
             valid = false;
@@ -161,10 +174,8 @@
         if (valid) {
             alert('Registration successful!');
             document.getElementById('registrationForm').reset();
-            // Open new tab with confirmation page or message
-            const newTab = window.open('', '_blank');
-            newTab.document.write('<!DOCTYPE html><html><head><title>Registration Successful</title></head><body style="font-family:Arial,sans-serif;text-align:center;padding:50px;background-color:#A4D7E1;color:#0D2C40;"><h1>Registration Successful!</h1><p>Thank you for registering.</p></body></html>');
-            newTab.document.close();
+             window.location.href = "sign_in.html";
+            
         }
     });
 </script>
