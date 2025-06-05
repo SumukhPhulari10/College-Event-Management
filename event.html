@@ -7,32 +7,39 @@
     <style>
         body {
             font-family: Arial;
-            background: #000000;
+             background-image: url(https://images.wallpapersden.com/image/download/ai-landscape-2023-digital-art_bmVubGiUmZqaraWkpJRmbmpnrWZmZ2U.jpg);
+            background-size: cover;
+              height: 100vh;
+            background-repeat: no-repeat;
             padding: 20px;
             color: #f7f7f7;
         }
 
         form {
-            background: #333333;
+            background:none;
             padding: 20px;
             max-width: 400px;
             margin: auto;
             border-radius: 8px;
-            box-shadow: 0 0 10px #7DA2A9;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.9);
         }
-        h2{
+
+        h2 {
             text-align: center;
+            margin-top: 10%;
+            font-size: 30px;
         }
 
         input,
         select,
         textarea {
-            width: 100%;
+            width: 95%;
             margin-bottom: 12px;
             padding: 10px;
-            border: none;
+            border: 1px solid black;
             border-radius: 4px;
             background: #000000;
+            box-shadow: 0 0 10px #0b6a6a;
             color: #f7f7f7;
         }
 
@@ -52,12 +59,13 @@
             color: #000000;
             border: none;
             cursor: pointer;
+            margin-left: 151px;
             border-radius: 4px;
-            transition: background 0.3s;
+            transition: 0.3s;
         }
 
         button:hover {
-            background: #a5a5a5;
+            background: #fff;
         }
     </style>
 </head>
@@ -69,7 +77,7 @@
     <form id="eventForm">
         <input type="text" name="name" placeholder="Full Name" required>
         <input type="email" name="email" placeholder="Email" required>
-        <input type="tel" name="phone" placeholder="Phone Number" required>
+        <input type="text" name="class" placeholder="Class Name" required>
         <select name="eventType" required>
             <option value="">Select Event Type</option>
             <option value="speech">speech</option>
@@ -84,10 +92,9 @@
     <script>
         document.getElementById('eventForm').addEventListener('submit', function (e) {
             e.preventDefault();
-            const data = new FormData(e.target);
-            console.log(Object.fromEntries(data.entries()));
             alert('Event Registration submitted!');
             document.getElementById('eventForm').reset();
+            window.location.href = "index.html";
         });
     </script>
 
