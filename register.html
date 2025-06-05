@@ -124,7 +124,7 @@
             <input type="password" id="confirmPassword" name="confirmPassword" required>
             <div class="error" id="confirmPasswordError"></div>
         </div>
-        <a href="file:///C:/Users/prasa/OneDrive/Desktop/omkar%20solanke/MAIN-PROJECT/sign_in.html" >already have account ?</a>
+        <a id=ref onclick="ref" >already have account ?</a>
         <button type="submit" class="submit-btn">Register</button>
     </form>
 </div>
@@ -144,7 +144,10 @@
         const email = document.getElementById('email').value.trim();
         const password = document.getElementById('password').value;
         const confirmPassword = document.getElementById('confirmPassword').value;
-
+        function ref(){
+            window.location.href = "sign_in.html";
+        }
+            
         let valid = true;
 
         if (fullName.length < 3) {
