@@ -68,14 +68,18 @@ body {
 header {
     text-align: center;
     padding: 7rem 2rem;
-    background-color: #7DA2A9;
     color: white;
+     background: url(https://wallpapercave.com/wp/wp7488275.jpg);
+  background-repeat: no-repeat;
+  background-size: auto;
+  height: 600px;
 }
 
 header h1 {
     font-size: 2.8rem;
     margin-bottom: 1rem;
-    font-weight: 700;
+    font-weight: bolder;
+    margin-top: 100px;
 }
 
 header p {
@@ -98,7 +102,7 @@ header p {
     font-size: 1rem;
     border: 2px solid #fff;
     border-radius: 6px;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
 }
 
 .header-buttons button:hover {
@@ -128,7 +132,7 @@ button {
     padding: 0.75rem 1.5rem;
     cursor: pointer;
     border-radius: 8px;
-    transition: background-color 0.3s, color 0.3s;
+    transition: 0.3s, color 0.3s;
 }
 
 button:hover {
@@ -149,12 +153,12 @@ button:hover {
     object-fit: cover;
     border-radius: 10px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: 0.3s; 
 }
 
 .gallery img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
 }
 
 
