@@ -1,186 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Form</title>
     <style>
-    body {
-        font-family: Arial, sans-serif;
-        background-image: url(https://images.wallpapersden.com/image/download/starry-landscape-4k-cool-blue-moon_bW5tbG6UmZqaraWkpJRobWllrWdma2U.jpg); 
-        background-size: cover;
-        height: 100vh;
-        margin: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url(back1.jpg);
+            background-size: cover;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-    .form-container {
-        background-color: none; 
-        opacity: 0.9;
-        padding: 30px;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.9);
-        width: 100%;
-        max-width: 400px;
-        color: #f7f7f7; 
-    }
+        .form-container {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            backdrop-filter: blur(3px);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.9);
+            width: 100%;
+            max-width: 400px;
+            color: #f7f7f7;
+        }
 
-    .form-container h2 {
-        text-align: center;
-        margin-bottom: 20px;
-        color: #6ebfcf; 
-        font-size: 29px;
-    }
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #6ebfcf;
+            font-size: 29px;
+        }
 
-    .form-group {
-        margin-bottom: 15px;
-    }
+        .form-group {
+            margin-bottom: 15px;
+        }
 
-    .form-group label {
-        display: block;
-        margin-bottom: 5px;
-        font-weight: bold;
-        color: #f7f7f7; 
-    }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #f7f7f7;
+        }
 
-    .form-group input {
-        width: 95%;
-        padding: 10px;
-         border-radius: 6px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+        .form-group input {
+            width: 95%;
+            padding: 10px;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 
-        border: 1px solid #4a4646; 
-        color: #fff; 
-        background: none;
-    }
+            border: 1px solid #4a4646;
+            color: #fff;
+            background: none;
+        }
 
-    .form-group input:focus {
-        border-color: #7DA2A9; 
-        outline: none;
-        box-shadow: 0 0 5px #7DA2A9;
-    }
-    a{
-        text-decoration: none;
-        font-size: 18px;
-        font-weight: bold;
-        color: red;
-    }
-    a:hover{
-        color: blue;
+        .form-group input:focus {
+            border-color: #7DA2A9;
+            outline: none;
+            box-shadow: 0 0 5px #7DA2A9;
+        }
 
-    }
-    .submit-btn {
-        background-color: #7DA2A9; 
-        color: #000000;
-        padding: 12px;
-        border: none;
-        margin-top: 20px;
-        border-radius: 6px;
-        width: 100%;
-        font-size: 16px;
-        cursor: pointer;
-        transition:  0.6s ease;
-    }
+        a {
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            color: red;
+        }
 
-    .submit-btn:hover {
-        background-color: #000000;
-        color: white; 
-    }
+        a:hover {
+            color: blue;
 
-    .error {
-        color: #ff6b6b; 
-        font-size: 0.9em;
-        margin-top: 5px;
-    }
-</style>
+        }
+
+        .submit-btn {
+            background-color: #7DA2A9;
+            color: #000000;
+            padding: 12px;
+            border: none;
+            margin-top: 20px;
+            border-radius: 6px;
+            width: 100%;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.6s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #000000;
+            color: white;
+        }
+
+        .error {
+            color: #ff6b6b;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+    </style>
 
 </head>
+
 <body>
-<div class="form-container">
-    <h2>Register</h2>
-    <form id="registrationForm" action="register.php" method="post">
-        <div class="form-group">
-            <label for="fullname">Full Name :</label>
-            <input type="text" id="fullname" name="name" required>
-            <div class="error" id="nameError"></div>
-        </div>
+    <div class="form-container">
+        <h2>Register</h2>
+        <form id="registrationForm" action="register.php" method="post">
+            <div class="form-group">
+                <label for="fullname">Full Name :</label>
+                <input type="text" id="fullname" name="name" required>
+                <div class="error" id="nameError"></div>
+            </div>
 
-        <div class="form-group">
-            <label for="email">Email :</label>
-            <input type="email" id="email" name="email" required>
-            <div class="error" id="emailError"></div>
-        </div>
+            <div class="form-group">
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" required>
+                <div class="error" id="emailError"></div>
+            </div>
 
-        <div class="form-group">
-            <label for="password">Password :</label>
-            <input type="password" id="password" name="password" required>
-            <div class="error" id="passwordError"></div>
-        </div>
+            <div class="form-group">
+                <label for="password">Password :</label>
+                <input type="password" id="password" name="password" required>
+                <div class="error" id="passwordError"></div>
+            </div>
 
-        <div class="form-group">
-            <label for="confirmPassword">Confirm Password :</label>
-            <input type="password" id="confirmPassword" name="confirmPassword" required>
-            <div class="error" id="confirmPasswordError"></div>
-        </div>
-        <a id=ref onclick="ref" >already have account ?</a>
-        <button type="submit" class="submit-btn">Register</button>
-    </form>
-</div>
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password :</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+                <div class="error" id="confirmPasswordError"></div>
+            </div>
+            <a href="file:///C:/Users/prasa/OneDrive/Desktop/omkar%20solanke/MAIN-PROJECT/sign_in.html">already have
+                account ?</a>
+            <button type="submit" class="submit-btn">Register</button>
+        </form>
+    </div>
 
-<script>
-    document.getElementById('registrationForm').addEventListener('submit', function(event) {
-        event.preventDefault();
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function (event) {
+            event.preventDefault();
 
-        
-        document.getElementById('nameError').innerText = '';
-        document.getElementById('emailError').innerText = '';
-        document.getElementById('passwordError').innerText = '';
-        document.getElementById('confirmPasswordError').innerText = '';
 
-       
-        const fullName = document.getElementById('fullname').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const password = document.getElementById('password').value;
-        const confirmPassword = document.getElementById('confirmPassword').value;
-        function ref(){
-            window.location.href = "sign_in.html";
-        }
-            
-        let valid = true;
+            document.getElementById('nameError').innerText = '';
+            document.getElementById('emailError').innerText = '';
+            document.getElementById('passwordError').innerText = '';
+            document.getElementById('confirmPasswordError').innerText = '';
 
-        if (fullName.length < 3) {
-            document.getElementById('nameError').innerText = 'Name must be at least 3 characters';
-            valid = false;
-        }
 
-        
-        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailPattern.test(email)) {
-            document.getElementById('emailError').innerText = 'Please enter a valid email address';
-            valid = false;
-        }
+            const fullName = document.getElementById('fullname').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
 
-        
-        if (password.length < 6) {
-            document.getElementById('passwordError').innerText = 'Password must be at least 6 characters';
-            valid = false;
-        }
+            let valid = true;
 
-        
-        if (password !== confirmPassword) {
-            document.getElementById('confirmPasswordError').innerText = 'Passwords do not match';
-            valid = false;
-        }
+            if (fullName.length < 3) {
+                document.getElementById('nameError').innerText = 'Name must be at least 3 characters';
+                valid = false;
+            }
 
-        if (valid) {
-            alert('Registration successful!');
-            document.getElementById('registrationForm').reset();
-             window.location.href = "sign_in.html";
-            
-        }
-    });
-</script>
+
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                document.getElementById('emailError').innerText = 'Please enter a valid email address';
+                valid = false;
+            }
+
+
+            if (password.length < 6) {
+                document.getElementById('passwordError').innerText = 'Password must be at least 6 characters';
+                valid = false;
+            }
+
+
+            if (password !== confirmPassword) {
+                document.getElementById('confirmPasswordError').innerText = 'Passwords do not match';
+                valid = false;
+            }
+
+            if (valid) {
+                alert('Registration successful!');
+                document.getElementById('registrationForm').reset();
+                window.location.href = "sign_in.html";
+
+            }
+        });
+    </script>
 </body>
+
 </html>
