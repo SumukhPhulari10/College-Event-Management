@@ -7,30 +7,34 @@
     <style>
         body {
             font-family: Arial;
-            background: #000000;
+            background-image: url(back5.jpg);
+            background-size: cover;
+            height: 100vh;
+            background-repeat: no-repeat;
             padding: 20px;
-            color:
-                #f7f7f7;
-
-
-
+            color: #f7f7f7;
         }
-        h2{
+
+        h2 {
             text-align: center;
+            margin-top: 10%;
+            font-size: 30px;
         }
 
         form {
-            background: #333333;
-            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            backdrop-filter: blur(3px);
+            padding: 30px;
             max-width: 400px;
             margin: auto;
             border-radius: 8px;
-            box-shadow: 0 0 10px #7DA2A9;
+            box-shadow: 0 4px 12px rgb(17, 15, 15);
         }
 
         input,
         select {
-            width: 100%;
+            width: 95%;
             margin-bottom: 12px;
             padding: 10px;
             border: none;
@@ -53,9 +57,10 @@
             background: #7DA2A9;
             color: #000000;
             border: none;
+            margin-left: 151px;
             cursor: pointer;
             border-radius: 4px;
-            transition: background 0.3s;
+            transition: 0.3s;
         }
 
         button:hover {
@@ -71,12 +76,13 @@
     <form id="techForm">
         <input type="text" name="name" placeholder="Full Name" required>
         <input type="email" name="email" placeholder="Email" required>
-        <input type="text" name="college" placeholder="College Name" required>
+        <input type="text" name="class" placeholder="Class Name" required>
         <select name="techEvent" required>
             <option value="">Select Event</option>
             <option value="Hackathon">Hackathon</option>
             <option value="Coding Challenge">Coding Challenge</option>
             <option value="Robotics">Robotics</option>
+            <option value="Quiz">Quiz</option>
         </select>
         <button type="submit">Register</button>
     </form>
@@ -88,6 +94,7 @@
             console.log(Object.fromEntries(data.entries()));
             alert('Technical Event Registration submitted!');
             document.getElementById('techForm').reset();
+            window.location.href = "index.html";
         });
     </script>
 
