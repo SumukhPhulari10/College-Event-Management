@@ -130,13 +130,16 @@
                 <input type="password" id="confirmPassword" name="confirmPassword" required>
                 <div class="error" id="confirmPasswordError"></div>
             </div>
-            <a href="file:///C:/Users/prasa/OneDrive/Desktop/omkar%20solanke/MAIN-PROJECT/sign_in.html">already have
+            <a onclick="gt()">already have
                 account ?</a>
             <button type="submit" class="submit-btn">Register</button>
         </form>
     </div>
 
     <script>
+        function gt(){
+            windows.location.href = "sign_in.html";
+        }
         document.getElementById('registrationForm').addEventListener('submit', function (event) {
             event.preventDefault();
 
