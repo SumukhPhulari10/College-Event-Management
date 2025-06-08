@@ -26,6 +26,7 @@
         <h1>Welcome to College Event Management</h1>
         <p>Organize. Participate. Celebrate.</p>
         <div class="header-buttons">
+            <button onclick="change()">L/D</button>
             <button onclick="goToRegister()">Register Now</button>
             <button onclick="goToSignin()">Sign In</button>
         </div>
@@ -114,8 +115,11 @@
         function goTovol() {
             window.location.href = "volunteer.html";
         }
-
-
+        function change(){
+            var ele= document.body;
+            ele.classList.toggle("dark-mode");
+        }
+        
         document.getElementById('contactForm').addEventListener('submit', function (event) {
             event.preventDefault();
             alert("Thank you for contacting us! We will get back to you soon.");
