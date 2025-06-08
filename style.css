@@ -44,6 +44,15 @@ body {
     border-radius: 6px;
 }
 
+.dark-mode {
+    background-color: black;
+    color: white;
+}
+
+.dark-mode h2 {
+    color: white;
+}
+
 .navbar a:hover {
     background-color: #7DA2A9;
     color: #111;
@@ -142,7 +151,7 @@ button:hover {
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.5rem;
+    gap: 2rem;
     padding: 0 1rem;
 }
 
@@ -151,7 +160,7 @@ button:hover {
     height: 320px;
     object-fit: cover;
     border-radius: 10px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 12px rgba(0, 8, 0, 0.9);
     transition: 0.3s;
 }
 
@@ -159,7 +168,10 @@ button:hover {
     transform: scale(1.1);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
 }
-
+.dark-mode .gallery img:hover {
+    box-shadow: 0 6px 12px rgba(231, 12, 12, 0.9);
+    transition: 0.3s;
+}
 
 .con {
     text-align: center;
@@ -182,11 +194,20 @@ button:hover {
     height: 150px;
 }
 
+.dark-mode .contact_us button {
+    background-color: white;
+    color: black;
+}
+
 .contact_us button {
     max-width: 600px;
     width: 100%;
 }
 
+.dark-mode .contact_us button:hover {
+    background-color: #7DA2A9;
+    color: #111;
+}
 
 .inter {
     margin: 4rem 0;
