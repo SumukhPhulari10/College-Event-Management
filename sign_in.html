@@ -118,7 +118,7 @@
                     <input id="email" type="email"  required>
                     <label>Password :</label>
                     <input id="pass" type="password"  required>
-                    <a href="file:///C:/Users/prasa/OneDrive/Desktop/omkar%20solanke/MAIN-PROJECT/register.html">don't
+                    <a onclick="gt()">don't
                         have account ?</a>
                     <button type="submit">Sign In</button>
                 </div>
@@ -126,6 +126,9 @@
         </section>
     </div>
     <script>
+          function gt(){
+            windows.location.href = "register.html";
+        }
         document.getElementById('signinForm').addEventListener('submit', function (event) {
             event.preventDefault();
 
