@@ -8,18 +8,24 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 
 <body>
-    <button class="burger" onclick="toggleNavbar()">☰ Menu</button>
+    <button class="burger" id="menuButton" onclick="toggleNavbar()">☰ Menu</button>
 
     <nav class="navbar" id="navbar">
-        <a href="#home">Home</a>
-        <a href="#events">Events</a>
-
-        <a href="#gallery">Gallery</a>
-        <a href="#contact">Contact Us</a>
-        <a href="#about">About</a>
+        <button class="close-btn" onclick="toggleNavbar()">×</button>
+        <div class="user-profile" id="userProfile" style="display: none;">
+            <i class="fas fa-user-circle"></i>
+            <span id="userName"></span>
+        </div>
+        <a href="#home" onclick="closeMenu()">Home</a>
+        <a href="#events" onclick="closeMenu()">Events</a>
+        <a href="#gallery" onclick="closeMenu()">Gallery</a>
+        <a href="#contact" onclick="closeMenu()">Contact Us</a>
+        <a href="#about" onclick="closeMenu()">About</a>
+        <a href="#" id="logoutBtn" onclick="logout()" style="display: none;">Logout</a>
     </nav>
 
     <header id="home">
@@ -91,13 +97,48 @@
 <script>AOS.init();</script>
 
     <script>
-        function goToRegister() {
-            window.location.href = "register.html";
+        // Check if user is logged in
+        window.onload = function() {
+            const userName = localStorage.getItem('userName');
+            if (userName) {
+                document.getElementById('userProfile').style.display = 'flex';
+                document.getElementById('userName').textContent = 'Hello, ' + userName;
+                document.getElementById('logoutBtn').style.display = 'block';
+            }
+            
+            // Add click outside functionality
+            document.addEventListener('click', function(event) {
+                const navbar = document.getElementById('navbar');
+                const burger = document.querySelector('.burger');
+                if (!navbar.contains(event.target) && !burger.contains(event.target) && navbar.classList.contains('open')) {
+                    navbar.classList.remove('open');
+                    burger.style.display = 'block';
+                }
+            });
+        }
+
+        function closeMenu() {
+            const navbar = document.getElementById('navbar');
+            const menuButton = document.getElementById('menuButton');
+            navbar.classList.remove('open');
+            menuButton.style.display = 'block';
         }
 
         function toggleNavbar() {
             const navbar = document.getElementById('navbar');
+            const menuButton = document.getElementById('menuButton');
             navbar.classList.toggle('open');
+            
+            // Hide menu button when menu is open
+            if (navbar.classList.contains('open')) {
+                menuButton.style.display = 'none';
+            } else {
+                menuButton.style.display = 'block';
+            }
+        }
+
+        function goToRegister() {
+            window.location.href = "register.html";
         }
 
         function goToSignin() {
@@ -125,6 +166,18 @@
             alert("Thank you for contacting us! We will get back to you soon.");
             document.getElementById('contactForm').reset();
         });
+
+        function logout() {
+            // Clear user data
+            localStorage.removeItem('userName');
+            // Hide user profile and logout button
+            document.getElementById('userProfile').style.display = 'none';
+            document.getElementById('logoutBtn').style.display = 'none';
+            // Close menu
+            closeMenu();
+            // Show success message
+            alert('Logged out successfully!');
+        }
 
     </script>
 

@@ -132,13 +132,16 @@
         document.getElementById('signinForm').addEventListener('submit', function (event) {
             event.preventDefault();
 
+            // Store user's email as name for now (you can modify this based on your backend)
+            const userEmail = document.getElementById('email').value;
+            localStorage.setItem('userName', userEmail.split('@')[0]); // Store username part of email
+
             alert("Signed in successfully!");
             window.location.href = "index.html";
 
             document.getElementById('signinForm').reset();
 
             let valid = true;
-
         });
     </script>
 </body>
