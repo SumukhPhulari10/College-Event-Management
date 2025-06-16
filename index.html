@@ -13,6 +13,9 @@
 
 <body>
     <button class="burger" id="menuButton" onclick="toggleNavbar()">☰ Menu</button>
+    <button class="theme-toggle" id="themeToggle" onclick="change()">
+        <i class="fas fa-sun"></i>
+    </button>
 
     <nav class="navbar" id="navbar">
         <button class="close-btn" onclick="toggleNavbar()">×</button>
@@ -32,7 +35,6 @@
         <h1>Welcome to College Event Management</h1>
         <p>Organize. Participate. Celebrate.</p>
         <div class="header-buttons">
-            <button onclick="change()">L/D</button>
             <button onclick="goToRegister()">Register Now</button>
             <button onclick="goToSignin()">Sign In</button>
         </div>
@@ -157,8 +159,18 @@
             window.location.href = "volunteer.html";
         }
         function change(){
-            var ele= document.body;
+            var ele = document.body;
             ele.classList.toggle("dark-mode");
+            
+            // Change icon based on mode
+            const themeIcon = document.querySelector('.theme-toggle i');
+            if (ele.classList.contains('dark-mode')) {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            } else {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            }
         }
         
         document.getElementById('contactForm').addEventListener('submit', function (event) {
